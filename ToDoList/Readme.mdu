@@ -1,0 +1,161 @@
+# ToDoList Application
+
+A simple and efficient task management application built with **HTML, CSS, and JavaScript** to help you organize and track your daily tasks.
+
+---
+
+## 📋 Overview
+
+This ToDoList app allows users to:
+- ✅ Add new tasks
+- ✏️ Edit existing tasks
+- 🗑️ Delete completed or unwanted tasks
+- 📝 Mark tasks as complete/incomplete
+- 💾 Persist data using browser storage
+- 🎯 Organize tasks efficiently
+
+---
+
+## 🚀 Features
+
+### Core Functionality
+- **Add Tasks**: Quickly add new items to your to-do list
+- **Mark Complete**: Toggle task completion status
+- **Edit Tasks**: Modify task descriptions
+- **Delete Tasks**: Remove tasks you no longer need
+- **Local Storage**: Tasks persist even after closing the browser
+
+### User Interface
+- Clean, intuitive design
+- Responsive layout
+- Easy-to-use controls
+- Visual feedback for task status
+
+---
+
+## 📁 Project Structure
+
+```
+ToDoList/
+├── index.html          # Main HTML file with structure
+├── style.css          # Styling and layout (if separate)
+├── script.js          # JavaScript functionality (if separate)
+└── Readme.mdu         # This documentation file
+```
+
+---
+
+## 🛠️ How to Use
+
+### Getting Started
+1. Open `index.html` in your web browser
+2. You'll see the main ToDoList interface
+
+### Adding a Task
+1. Enter your task in the input field
+2. Click the "Add" or "Create" button
+3. Task appears in your list
+
+### Managing Tasks
+- **Complete Task**: Click the checkbox or task item to mark as done
+- **Edit Task**: Click the edit icon/button to modify the task description
+- **Delete Task**: Click the delete/trash icon to remove the task
+
+### Data Persistence
+- Tasks are automatically saved to browser localStorage
+- Your tasks will remain even after refreshing or closing the browser
+- Clear local storage to reset all tasks
+
+---
+
+## 💻 Technologies Used
+
+| Technology | Purpose |
+|-----------|---------|
+| **HTML5** | Structure and semantic markup |
+| **CSS3** | Styling and responsive design |
+| **JavaScript (Vanilla)** | Core functionality and DOM manipulation |
+| **LocalStorage API** | Data persistence |
+
+---
+
+## 📝 Code Highlights
+
+### Key JavaScript Functions
+- `addTask()` - Add new task to list
+- `deleteTask()` - Remove a task
+- `editTask()` - Modify task content
+- `toggleComplete()` - Mark task completion
+- `saveToLocalStorage()` - Persist data
+- `loadFromLocalStorage()` - Retrieve saved tasks
+
+---
+
+## 🎨 Customization
+
+You can customize the app by modifying:
+- **Colors**: Edit CSS color values
+- **Fonts**: Change font-family in styles
+- **Layout**: Adjust grid/flexbox properties
+- **Features**: Add new functions in JavaScript
+
+---
+
+## 📱 Browser Support
+
+Works on all modern browsers that support:
+- HTML5
+- CSS3
+- ES6 JavaScript
+- LocalStorage API
+
+✅ Chrome, Firefox, Safari, Edge
+
+---
+
+## 🐛 Known Limitations
+
+- Single-user offline application
+- No cloud sync capability
+- Limited to browser storage capacity (~5-10MB)
+- No categories or priorities system (can be added)
+
+---
+
+## 🔮 Future Enhancements
+
+Potential features to add:
+- Task categories/tags
+- Priority levels
+- Due dates
+- Search functionality
+- Dark mode theme
+- Export/Import tasks
+
+---
+
+## 📄 License
+
+This project is free to use and modify for personal or educational purposes.
+
+---
+
+## 👨‍💻 Author
+
+Created as a learning project to master **HTML, CSS, and Vanilla JavaScript**.
+
+---
+
+## 🎓 Learning Outcomes
+
+By building this project, you'll learn:
+- DOM manipulation
+- Event handling
+- LocalStorage API
+- CSS styling & layout
+- JavaScript functions & logic
+- Form handling
+
+---
+
+**Happy Task Managing! 🎯**
