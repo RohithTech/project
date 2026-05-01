@@ -1,5 +1,7 @@
 import express  from 'express'
-import {PORT} from './config.js'
+import path from 'path'
+import {PORT} from './.env'
+import dotenv from 'dotenv'
 import {mongodburl} from './config.js'
 import mongoose from 'mongoose'
 import {Book} from './schemma/book.mjs'
@@ -22,10 +24,21 @@ app.use('/books',routers)
 //     methods:['GET','POST','PUT','DELETE'],
 //     allowedHeaders:['Content-Type']
 // }))
+const PORT = process.env.PORT ;
 app.listen(PORT,()=>{
     console.log(`Everything okay:${PORT}`);
 });
 mongoose.connect(mongodburl)
+
+const __dirname = path.resolve();
+if(process.env.NODE_ENV == 'production'){
+    const frontendpath = path.join(__dirname,"..","frontend","dist")
+    app.use(express.static(frontendpath))
+    app.use('*',(res,req)=>{
+        res.sendFile(path.join(frontendpath,'index.html'))
+    })
+}
+mongoose.connect(process.env.MONGODB_URL)
 .then(()=>{
     console.log('Connected successfully to MongoDB');
 }
