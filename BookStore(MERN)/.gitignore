@@ -1,0 +1,44 @@
+# Node.js dependencies
+frontend/node_modules/
+backend/node_modules/
+backend/package-lock.json
+backend/package.json
+frontend/package-lock.json
+frontend/package.json
+frontend/vite.config.js
+frontend/README.md
+frontend/eslint.config.js
+# Build output
+dist/
+build/
+
+# Runtime data
+*.log
+logs/
+*.pid
+*.seed
+*.pid.lock
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE/editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Coverage reports
+coverage/
+
+# React specific
+*.cache
+*.tmp
