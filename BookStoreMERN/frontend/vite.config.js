@@ -11,7 +11,7 @@ export default defineConfig({
   preview: {
     host: '0.0.0.0',
     port: Number(process.env.PORT),
-    allowedHosts: ['project-2-lf42.onrender.com']
+    allowedHosts: ['bookstore-mu46.onrender.com']
   }
 })
 

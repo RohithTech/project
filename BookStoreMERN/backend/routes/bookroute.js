@@ -8,7 +8,7 @@ router.post('/', async (req, res) => {
         if(!req.body.title || !req.body.author || !req.body.publishYear){
             return res.status(400).send('Title, author, and publish year are required');
         }
-        console.log('hii');
+        // console.log('hii');
         
         const newBook = new Book({
             title: req.body.title,
@@ -68,7 +68,7 @@ router.get('/', async (req, res) => {
 
 router.get("/:id", async (req,res)=>{
     let id = req.params.id;
-    console.log(id);
+    // console.log(id);
     
     
     try {

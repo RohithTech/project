@@ -1,6 +1,7 @@
 import express  from 'express'
 import path from 'path'
-import {PORT} from './.env'
+import {PORTT} from './config.js'
+import {PORT} from '././.env'
 import dotenv from 'dotenv'
 import {mongodburl} from './config.js'
 import mongoose from 'mongoose'
@@ -28,7 +29,6 @@ const PORT = process.env.PORT ;
 app.listen(PORT,()=>{
     console.log(`Everything okay:${PORT}`);
 });
-mongoose.connect(mongodburl)
 
 const __dirname = path.resolve();
 if(process.env.NODE_ENV == 'production'){
@@ -38,6 +38,7 @@ if(process.env.NODE_ENV == 'production'){
         res.sendFile(path.join(frontendpath,'index.html'))
     })
 }
+// mongoose.connect(mongodburl)
 mongoose.connect(process.env.MONGODB_URL)
 .then(()=>{
     console.log('Connected successfully to MongoDB');
