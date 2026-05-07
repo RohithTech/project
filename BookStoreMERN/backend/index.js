@@ -1,13 +1,12 @@
 import express  from 'express'
 import path from 'path'
-import {PORTT} from './config.js'
-import {PORT} from '././.env'
 import dotenv from 'dotenv'
-import {mongodburl} from './config.js'
 import mongoose from 'mongoose'
 import {Book} from './schemma/book.mjs'
 import routers from './routes/bookroute.js'
 import cors from 'cors'
+
+dotenv.config();
 
 const app = express();
 app.use(cors({
@@ -25,21 +24,21 @@ app.use('/books',routers)
 //     methods:['GET','POST','PUT','DELETE'],
 //     allowedHeaders:['Content-Type']
 // }))
-const PORT = process.env.PORT ;
-app.listen(PORT,()=>{
-    console.log(`Everything okay:${PORT}`);
+// const PORT = process.env.PORT ;
+app.listen(process.env.PORT,()=>{
+    console.log(`Everything okay:${process.env.PORT}`);
 });
 
 const __dirname = path.resolve();
 if(process.env.NODE_ENV == 'production'){
     const frontendpath = path.join(__dirname,"..","frontend","dist")
     app.use(express.static(frontendpath))
-    app.use('*',(res,req)=>{
+    app.use('*',(req,res)=>{
         res.sendFile(path.join(frontendpath,'index.html'))
     })
 }
 // mongoose.connect(mongodburl)
-mongoose.connect(process.env.MONGODB_URL)
+mongoose.connect(process.env.MONGO_URL)
 .then(()=>{
     console.log('Connected successfully to MongoDB');
 }

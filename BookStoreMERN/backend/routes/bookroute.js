@@ -83,8 +83,8 @@ router.get("/:id", async (req,res)=>{
 
 })
 
-router.get('/',(req,res)=>{
-   return res.status(201).send('Hello from root')
-})
+// router.get('/',(req,res)=>{
+//    return res.status(201).send('Hello from root')
+// })
 
 export default router;
