@@ -11,8 +11,9 @@ function Home() {
 
   useEffect(() => {
     // setLoading(true);
+    const API_URL = import.meta.env.VITE_API_URL;
    axios
-   .get("https://bookstore-mu46.onrender.com/books/")
+   .get(API_URL)
       .then((res) => {
         setBooks(res.data.data);
         setLoading(false);
