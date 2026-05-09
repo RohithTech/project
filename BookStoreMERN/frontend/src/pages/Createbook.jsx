@@ -20,9 +20,9 @@ function Createbook() {
       author,
       publishYear,
     };
-
+ const API_URL = import.meta.env.VITE_API_URL;
     axios
-      .post("https://project-1-62j2.onrender.com/", data)
+      .post(`${API_URL}/`, data)
       .then(() => {
         setAdded(true);
         enqueueSnackbar('Successfully created', {varient:'success'})
