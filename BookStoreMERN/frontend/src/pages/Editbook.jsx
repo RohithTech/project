@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import { api } from "../api/axios";
 import Backbutton from "../../components/Backbutton";
-import Spinner from "../../components/Spinner";
 import { useNavigate, useParams } from "react-router-dom";
 import {useSnackbar} from 'notistack'
 
@@ -16,7 +15,8 @@ const navigate = useNavigate();
 
 useEffect(()=>{
   // setAdded(true)
-  axios.get(`http://localhost:5555/books/${id}`)
+  api
+  .get(`/${id}`)
   .then((res)=>{
     setTitle(res.data.title)
     setAuthor(res.data.author)
@@ -42,8 +42,8 @@ useEffect(()=>{
       publishYear,
     };
 
-    axios
-      .put(`http://localhost:5555/books/${id}`, data)
+    api
+      .put(`/${id}`, data)
       .then(() => {
         setAdded(true);
       })
