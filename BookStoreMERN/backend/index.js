@@ -9,18 +9,7 @@ import cors from 'cors'
 dotenv.config();
 
 const app = express();
-// app.use(cors())
-
-app.use(cors({
-}));
-
-app.use(
-    cors({
-      origin: "https://bookstoremern-frontend-szo0.onrender.com",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-  })
-);
-
+app.use(cors())
 
 app.use(express.json());
 app.use('/books',routers)
