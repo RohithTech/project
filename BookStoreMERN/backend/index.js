@@ -9,12 +9,7 @@ import cors from 'cors'
 dotenv.config();
 
 const app = express();
-app.use(cors({
-  origin: [
-    'http://localhost:5173',
-    'https://bookstore-mu46.onrender.com'
-  ]
-}))
+app.use(cors())
 app.use(express.json());
 app.use('/books',routers)
 
