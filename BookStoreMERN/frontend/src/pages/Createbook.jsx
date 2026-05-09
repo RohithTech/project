@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useState} from "react";
+import { api } from "../api/axios";
 import Backbutton from "../../components/Backbutton";
-import Spinner from "../../components/Spinner";
 import { useNavigate } from "react-router-dom";
 import {useSnackbar} from 'notistack'
 function Createbook() {
@@ -20,9 +19,8 @@ function Createbook() {
       author,
       publishYear,
     };
- const API_URL = import.meta.env.VITE_API_URL;
-    axios
-      .post(`${API_URL}/`, data)
+    api
+      .post('/', data)
       .then(() => {
         setAdded(true);
         enqueueSnackbar('Successfully created', {varient:'success'})

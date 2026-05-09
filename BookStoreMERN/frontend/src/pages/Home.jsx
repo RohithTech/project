@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
 import Spinner from "../../components/Spinner";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import { AiOutlineEdit } from "react-icons/ai";
 import { BsInfoCircle } from "react-icons/bs";
 import { MdOutlineAddBox, MdOutlineDelete } from "react-icons/md";
+import { api } from "../api/axios";
 function Home() {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     // setLoading(true);
-    const API_URL = import.meta.env.VITE_API_URL;
-   axios
-   .get(`${API_URL}/`)
+   api
+   .get('/')
       .then((res) => {
         setBooks(res.data.data);
         setLoading(false);
