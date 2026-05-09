@@ -13,7 +13,7 @@ function Home() {
     // setLoading(true);
     const API_URL = import.meta.env.VITE_API_URL;
    axios
-   .get((`${API_URL}/books`))
+   .get(`${API_URL}/`)
       .then((res) => {
         setBooks(res.data.data);
         setLoading(false);
