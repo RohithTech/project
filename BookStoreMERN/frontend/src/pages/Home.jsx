@@ -12,7 +12,7 @@ function Home() {
   useEffect(() => {
     // setLoading(true);
    axios
-   .get("https://bookstore-mu46.onrender.com/books/")
+   .get("https://cloud.mongodb.com/v2/69fb65f18d619bb2769a9f6e#/explorer/69fc853739606b322cc2ffc6/MernProject/books")
       .then((res) => {
         setBooks(res.data.data);
         setLoading(false);
