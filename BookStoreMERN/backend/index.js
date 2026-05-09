@@ -12,7 +12,7 @@ const app = express();
 app.use(cors())
 
 app.use(express.json());
-app.use('/books',routers)
+app.use(routers)
 
 // middleware for cors policy
 // 1. allow all orgin with default of cors(*)
