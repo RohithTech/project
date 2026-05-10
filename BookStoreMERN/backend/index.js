@@ -2,7 +2,6 @@ import express  from 'express'
 import path from 'path'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
-import {Book} from './schemma/book.mjs'
 import routers from './routes/bookroute.js'
 import cors from 'cors'
 
@@ -27,14 +26,14 @@ app.listen(process.env.PORT,()=>{
     console.log(`Everything okay:${process.env.PORT}`);
 });
 
-const __dirname = path.resolve();
-if(process.env.NODE_ENV == 'production'){
-    const frontendpath = path.join(__dirname,"..","frontend","dist")
-    app.use(express.static(frontendpath))
-    app.use('*',(req,res)=>{
-        res.sendFile(path.join(frontendpath,'index.html'))
-    })
-}
+// const __dirname = path.resolve();
+// if(process.env.NODE_ENV == 'production'){
+//     const frontendpath = path.join(__dirname,"..","frontend","dist")
+//     app.use(express.static(frontendpath))
+//     app.use('*',(req,res)=>{
+//         res.sendFile(path.join(frontendpath,'index.html'))
+//     })
+// }
 // mongoose.connect(mongodburl)
 mongoose.connect(process.env.MONGO_URL)
 .then(()=>{
